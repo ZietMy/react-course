@@ -8,7 +8,7 @@ const PRODUCTS = [
   ];
   
   // 2-  Shopping cart : which contain the items the customer wants to buy and their quantity
-  // Exemple : Here the cart contains 2 apples and 1 orange  and the cart amount is 8 dollars
+  // Example : Here the cart contains 2 apples and 1 orange  and the cart amount is 8 dollars
   const SHOPPING_CART = [
     { id: 1, quantity: 2 },
     { id: 3, quantity: 1 },
@@ -20,7 +20,13 @@ const PRODUCTS = [
    */
   function getCartTotalAmount() {
     let result = 0;
-    // Write your code here
+    SHOPPING_CART.forEach(cart=>{
+      let item= PRODUCTS.find((e)=>e.id===cart.id)
+      if(item){
+        result+= cart.quantity*item.price;
+      }
+    }
+    )
     return result;
   }
   
@@ -36,7 +42,20 @@ const PRODUCTS = [
    * @param {*} productId  the product id to add
    */
   function addProductToCart(productId) {
+    SHOPPING_CART.forEach(cart=>{
+      // let product=PRODUCTS.find((s)=>s.id===productId);
+      let product= SHOPPING_CART.find((s)=>cart.id===productId);
+      if(product){
+        product.quantity+=1;
+      }else{
+        SHOPPING_CART.push({
+          id: productId,
+          quantity:1
+        })
+      }
+    })
     // Write your code here
+
   }
   
   /**
@@ -54,6 +73,13 @@ const PRODUCTS = [
    * @param {*} productId  the product id to add
    */
   function removeProductFromCart(productId) {
+    let indexProduct= SHOPPING_CART.findIndex((s)=>s.id==productId);
+    if(indexProduct>0){
+      let product = SHOPPING_CART[indexProduct];
+      product.quantity>=2 ? product.quantity -=1: SHOPPING_CART.splice(indexProduct,1) ;
+    }else{
+      return "nothing"
+    }
     // Write your code here
   }
   
