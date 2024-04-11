@@ -12,6 +12,9 @@
  */
 function transformToObjects(listOfNumbers) {
     result = [];
+    result=listOfNumbers.map(
+        number=>"Val:"+number
+    );
     // Write your code here
     return result;
   }
@@ -22,3 +25,4 @@ function transformToObjects(listOfNumbers) {
   
   // test 1  -
   console.log(JSON.stringify(transformToObjects([1, 2, 3]))); // Should  be     [{val: 1}, {val: 2}, {val: 3}]
+  z
