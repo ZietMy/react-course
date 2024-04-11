@@ -42,9 +42,8 @@ const PRODUCTS = [
    * @param {*} productId  the product id to add
    */
   function addProductToCart(productId) {
-    SHOPPING_CART.forEach(cart=>{
       // let product=PRODUCTS.find((s)=>s.id===productId);
-      let product= SHOPPING_CART.find((s)=>cart.id===productId);
+      let product= SHOPPING_CART.find((s)=>s.id===productId);
       if(product){
         product.quantity+=1;
       }else{
@@ -53,7 +52,7 @@ const PRODUCTS = [
           quantity:1
         })
       }
-    })
+  
     // Write your code here
 
   }
@@ -73,8 +72,8 @@ const PRODUCTS = [
    * @param {*} productId  the product id to add
    */
   function removeProductFromCart(productId) {
-    let indexProduct= SHOPPING_CART.findIndex((s)=>s.id==productId);
-    if(indexProduct>0){
+    let indexProduct = SHOPPING_CART.findIndex((s)=>s.id===productId);
+    if(indexProduct>=0){
       let product = SHOPPING_CART[indexProduct];
       product.quantity>=2 ? product.quantity -=1: SHOPPING_CART.splice(indexProduct,1) ;
     }else{
