@@ -11,17 +11,20 @@
 
 // TO CHECK
 // Check that your code still produce the same result
-// Check that your code can work with myny shopping carts
+// Check that your code can work with any shopping carts
 
 let shoppingCart = [
     { name: "Apples", price: 2.5, quantity: 3 },
     { name: "Bananas", price: 1.5, quantity: 2 },
     { name: "Oranges", price: 3, quantity: 1 },
   ];
-  
+
   // Calculate total price without using functions
-  let totalPrice = 0;
-  for (let item of shoppingCart) {
-    totalPrice += item.price * item.quantity;
+  function calculateTotalPrice(shoppingCart){
+      let totalPrice = 0;
+      for (let item of shoppingCart) {
+        totalPrice += item.price * item.quantity;
+      }
+      return totalPrice;
   }
-  console.log("Total price:", totalPrice);
+  console.log("Total price:", calculateTotalPrice(shoppingCart));
