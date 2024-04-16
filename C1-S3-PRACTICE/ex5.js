@@ -16,12 +16,17 @@ let students = [
   
   function updateStudentGrade(studentsArray, idToUpdate, newGrade) {
     // Step 1 : Use the findIndex method to find the index of the student with the provided ID in the studentsArray.
-    const indexToUpdate = -1;
-  
+    let indexToUpdate = studentsArray.findIndex((e)=>e.id==idToUpdate);
+    // const indexToUpdate = -1;
     if (indexToUpdate !== -1) {
+      let newArray = [...studentsArray];
+      newArray[indexToUpdate].grade=newGrade;
+      return newArray;
       // Step 2 : If the student with the provided ID is found , create a copy of the original array using the spread operator.
       // Step 3 : Update the grade of the student at the found index in the copied array.
     } else {
+      console.log("The student was not found");
+      return studentsArray;
       // Step 4 :  If the student with the provided ID is not found, log a message indicating that the student was not found and return the original array unchanged.
     }
   }
@@ -31,7 +36,7 @@ let students = [
   console.log(students);
   
   // Update the grade of the student with ID 2 to "A"
-  let updatedStudents = updateStudentGrade(students, 2, "A");
+  let updatedStudents = updateStudentGrade(students, 4, "A");
   
   // Updated array of students
   console.log("\nUpdated students array:");
