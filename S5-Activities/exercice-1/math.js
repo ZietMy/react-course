@@ -1,10 +1,10 @@
 // MATH FUNCTIONS
 
-function add(a, b) {
+export function add(a, b) {
   return a + b;
 }
 
-function subtract(a, b) {
+export function subtract(a, b) {
   return a - b;
 }
-const PI = 3.14159265359;
+export const PI = 3.14159265359;

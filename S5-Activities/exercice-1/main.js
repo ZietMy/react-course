@@ -1,7 +1,7 @@
 //  TODO 1 : In Math.js Export all  functions and constants
 
 //  TODO 2 : In main.js : Import all functions and constants from MATH module
-
+import * as math from './math.js';
 //  TODO 3 : In package.json add the following property         {  "type": "module"  }
 
 // TODO 4 : Test this code
