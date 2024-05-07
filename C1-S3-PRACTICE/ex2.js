@@ -15,9 +15,15 @@ let originalArray = [1, 2, 3, 4, 5];
 
 function updateArray(array, index, newValue) {
   newArray = [...array];
+  console.log(newArray);
   newArray[index] = newValue;
   return newArray;
 }
+
+// function restExample(a, b, ...rest){
+//   console.log('a: ',a," b: ",b," rest: ", rest)
+// }
+// restExample(...originalArray)
 
 let updatedArray = updateArray(originalArray, 2, 10);
 

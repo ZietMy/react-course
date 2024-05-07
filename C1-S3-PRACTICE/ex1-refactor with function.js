@@ -22,9 +22,11 @@ let shoppingCart = [
   // Calculate total price without using functions
   function calculateTotalPrice(shoppingCart){
       let totalPrice = 0;
-      for (let item of shoppingCart) {
-        totalPrice += item.price * item.quantity;
-      }
-      return totalPrice;
+
+      // for (let item of shoppingCart) {
+      //   totalPrice += item.price * item.quantity;
+      // }
+      // return totalPrice;
+      return shoppingCart.reduce((total, current)=>total+=current.price*current.quantity,0);
   }
   console.log("Total price:", calculateTotalPrice(shoppingCart));

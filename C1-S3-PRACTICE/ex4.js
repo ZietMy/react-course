@@ -19,9 +19,13 @@ function squareNumbers(arr) {
 // Function to compute the sum of array elements
 // You need to use the array.reduce() function
 function sumArray(arr) {
-  let sum = arr.reduce((total, currentValue)=> total+currentValue) ;
+  let sum = arr.reduce(getValue,0) ;
   return (sum);
   //  TODO - Your code here (1 line)
+}
+
+let getValue = (previousValue, currentValue, index, arr)=> {
+  console.log("hàm đầy đủ",previousValue, currentValue, index, arr);
 }
 
 console.log("Even numbers:", filterEvenNumbers(numbers)); // [2, 4]
