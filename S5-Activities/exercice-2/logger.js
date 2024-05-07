@@ -22,5 +22,6 @@ export function readLog() {
 export function writeLog(newLog) {
   let content = readLog();
   content += "\n" + newLog + " - at " + new Date().toLocaleTimeString();
-  fs.writeFileSync(LOG_FILE, content);
+  fs.appendFileSync( LOG_FILE, newLog)
+  // fs.writeFileSync(LOG_FILE, content);
 }
