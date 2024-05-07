@@ -1,12 +1,12 @@
 //  MODULE TO READ AND WRITE ON LOG FILE
-
-const LOG_FILE = "./logs.txt";
+import fs from 'fs';
+export const LOG_FILE = "./logs.txt";
 
 /**
  * Read the logs
  * @returns the current log file content
  */
-function readLog() {
+export function readLog() {
   let content = fs.readFileSync(LOG_FILE).toString();
   return content;
 }
@@ -19,7 +19,7 @@ function readLog() {
  * Add a new log to the file
  * @param {string} newLog - the log to add to the file
  */
-function writeLog(newLog) {
+export function writeLog(newLog) {
   let content = readLog();
   content += "\n" + newLog + " - at " + new Date().toLocaleTimeString();
   fs.writeFileSync(LOG_FILE, content);

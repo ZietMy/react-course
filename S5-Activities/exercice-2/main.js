@@ -6,6 +6,7 @@
 //    - You can check the docuement :   https://www.geeksforgeeks.org/node-js-fs-appendfilesync-function/
 
 // 1  - Display all logs
+import * as logger from './logger.js';
 console.log(logger.readLog());
 
 // 2  - Log a new message
